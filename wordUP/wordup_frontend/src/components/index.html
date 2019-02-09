@@ -1,0 +1,39 @@
+<!DOCTYPE html>
+<html lang="en" dir="ltr">
+  <head>
+    <meta charset="utf-8">
+    <title>Kiley Recommended</title>
+    <script src="src/index.js" charset="utf-8"></script>
+    <link rel="stylesheet" type="text/css" href="CSS/stylesheet.css" media="screen" />
+    <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/css/bootstrap.min.css" integrity="sha384-GJzZqFGwb1QTTN6wy59ffF1BuGJpLSa9DkKMp0DgiMDm4iYMj70gZWKYbI706tWS" crossorigin="anonymous">
+    <script src="https://stackpath.bootstrapcdn.com/bootstrap/4.2.1/js/bootstrap.min.js" integrity="sha384-B0UglyR+jN6CkvvICOB2joaf5I4l3gm9GU6Hc1og6Ls7i6U/mkkaduKaBhlAXv9k" crossorigin="anonymous"></script>
+  </head>
+  <body>
+
+    <div>
+      <h1>Send <span style="color:blue">Moods.</span></h1>
+      <h3><span style="color:#FF00FF">music to de-escalate my emotions while learning JS</span> </h3>
+    </div>
+
+    <div class="container" id="mood-form-container">
+    <button onclick="moodFormOnclick(2)">Feeling Moody?</button>
+    <button onclick="moodFormOnclick(1)">Get this form out my face.</button>
+      <form id="mood-form">
+
+        <label for="mood-name"><b>Mood Name:</b></label>
+        <input id="mood-name-input" type="text" placeholder="Name Plz."></input><br>
+
+        <label for="mood-description"><b>Describe Your Mood:</b></label>
+        <textarea id="mood-description-input" placeholder="Tell me how you're feeling." rows="3" cols="40"></textarea><br>
+
+        <label for="mood-img"><b>Post a URL That Sums Up Your Mood:</b></label>
+        <input id="mood-img-input" type="text" placeholder="Gimme some pics."></input><br>
+
+        <button id="mood-form-submit" type="submit">Validate My Emotions.</button>
+      </form>
+    </div>
+
+    <div class='row' id='moods'></div>
+
+  </body>
+</html>
