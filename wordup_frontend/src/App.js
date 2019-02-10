@@ -63,7 +63,7 @@ class App extends React.Component{
               changeSearchTerm={this.changeSearchTerm}
             />
 
-          <div className= 'container-div'>  
+          <div className= 'container-div'>
             <WordCardContainer
               wordsList={filterWords}
             />
