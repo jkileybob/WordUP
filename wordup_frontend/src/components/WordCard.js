@@ -13,7 +13,7 @@ class WordCard extends React.Component{
       })
 
       showCard = (e) => {
-        console.log(e.currentTarget.id)
+        // console.log(e.currentTarget.id)
         this.setState({
           isHidden: false
         })

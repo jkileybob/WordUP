@@ -9,7 +9,8 @@ class App extends React.Component{
     super()
     this.state = {
       allWords: [],
-      searchTerm: ""
+      searchTerm: "",
+      currentCard: null
     }
 
   }
@@ -22,8 +23,7 @@ class App extends React.Component{
       // console.log(words)
       // let currentCard = this.state.allWords;
       this.setState({
-        allWords: words,
-        currentCard: null
+        allWords: words
         // allWords: currentCard,
         // currentCard: this.getRandom(currentCard)
       })
@@ -40,7 +40,8 @@ class App extends React.Component{
     // console.log(e.currentTarget.value)
     let inputText = e.currentTarget.value
     this.setState({
-      searchTerm: inputText
+      searchTerm: inputText,
+      currentCard: inputText
     })
   }
 
@@ -54,21 +55,21 @@ class App extends React.Component{
     return(
 
       <div className="App">
-            <Navbar
-              title="WordUP!"
-             />
-            <SearchBar
-              textState={this.state.searchTerm}
-              changeSearchTerm={this.changeSearchTerm}
-            />
+              <Navbar
+                title="WordUP!"
+               />
+              <SearchBar
+                textState={this.state.searchTerm}
+                changeSearchTerm={this.changeSearchTerm}
+              />
 
+            {this.state.currentCard ?
           <div className= 'container-div'>
-            <WordCardContainer
-              wordsList={filterWords}
-              currentcard={this.state.currentCard}
-
-            />
-        </div>
+              <WordCardContainer
+                wordsList={filterWords}
+                currentcard={this.state.currentCard}
+              />
+          </div> : null}
       </div>
 
     )}
