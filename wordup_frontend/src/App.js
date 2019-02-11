@@ -21,15 +21,13 @@ class App extends React.Component{
     .then(response => response.json())
     .then(words => {
       // console.log(words)
-      // let currentCard = this.state.allWords;
       this.setState({
         allWords: words
-        // allWords: currentCard,
-        // currentCard: this.getRandom(currentCard)
       })
     })
   }
 
+  // currentCard: this.getRandom(currentCard)
   // getRandom = (currentCard) => {
   //   let card = currentCard[Math.floor(Math.random() * currentCard.length)]
   //   return card

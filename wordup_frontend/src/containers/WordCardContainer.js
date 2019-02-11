@@ -15,7 +15,6 @@ class WordCardContainer extends React.Component{
                   key={`${word.word}-card`}
                   word={word}
                   showCard={this.showCard}
-
                   currentcard={this.props.currentcard}
                 />
       })}

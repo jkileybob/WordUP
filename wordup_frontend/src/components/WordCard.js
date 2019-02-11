@@ -1,23 +1,23 @@
 import React from 'react'
 import WordInfo from '/Users/jkileybob/Mod-4-Final-Project/wordup_frontend/src/components/WordInfo.js'
 
-
-// props: word          ={word}
-//        currentCard   ={props.currentCard}
 class WordCard extends React.Component{
 
+  state=({
+    isHidden: true
+  })
 
-      state=({
-        isHidden: true,
-
-      })
-
-      showCard = (e) => {
-        // console.log(e.currentTarget.id)
-        this.setState({
-          isHidden: false
-        })
-      }
+  showCard = (e) => {
+    if (this.state.isHidden === true){
+    this.setState({
+      isHidden: false
+    })
+  } else {
+    this.setState({
+      isHidden: true
+    })
+  }
+  }
 
   render(){
     // console.log(this.props)
