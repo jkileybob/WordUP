@@ -12,9 +12,7 @@ class App extends React.Component{
       searchTerm: "",
       currentCard: null
     }
-
   }
-
 
   componentDidMount(){
     fetch('http://localhost:4000/api/v1/words')
@@ -27,12 +25,17 @@ class App extends React.Component{
     })
   }
 
-  // currentCard: this.getRandom(currentCard)
-  // getRandom = (currentCard) => {
-  //   let card = currentCard[Math.floor(Math.random() * currentCard.length)]
-  //   return card
-  // }
-
+  getRandom = (e) => {
+    fetch('http://localhost:4000/api/v1/words')
+    .then(response => response.json())
+    .then(words => {
+      let random = words[Math.floor(Math.random()*words.length)];
+      this.setState({
+        searchTerm: random.word,
+        currentCard: random
+      })
+    })
+  }
 
   changeSearchTerm = (e) => {
     // console.log(e.currentTarget.value)
@@ -59,6 +62,7 @@ class App extends React.Component{
               <SearchBar
                 textState={this.state.searchTerm}
                 changeSearchTerm={this.changeSearchTerm}
+                random={this.getRandom}
               />
 
             {this.state.currentCard ?
