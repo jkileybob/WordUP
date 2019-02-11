@@ -6,9 +6,8 @@ const SearchBar = (props) => {
     <input
       type="text"
       value={props.textState}
-      onChange={props.changeSearchTerm}/><br></br>
+      onChange={props.changeSearchTerm} /><br></br>
 
-    <button onClick={props.clickSearch}>Search</button>
     <button onClick={props.random}>Roll the Dice</button>
 
   </div>
@@ -16,3 +15,5 @@ const SearchBar = (props) => {
 }
 
 export default SearchBar
+
+// <button onClick={props.clickSearch}>Search</button>

@@ -14,16 +14,16 @@ class App extends React.Component{
     }
   }
 
-  // componentDidMount(){
-  //   fetch('http://localhost:4000/api/v1/words')
-  //   .then(response => response.json())
-  //   .then(words => {
-  //     // console.log(words)
-  //     this.setState({
-  //       allWords: words
-  //     })
-  //   })
-  // }
+  componentDidMount(){
+    fetch('http://localhost:4000/api/v1/words')
+    .then(response => response.json())
+    .then(words => {
+      // console.log(words)
+      this.setState({
+        allWords: words
+      })
+    })
+  }
 
   getRandom = (e) => {
     fetch('http://localhost:4000/api/v1/words')
@@ -46,12 +46,13 @@ class App extends React.Component{
     })
   }
 
-  clickSearch = (e) => {
-    fetch(`https://googledictionaryapi.eu-gb.mybluemix.net/?define=${e.currentTarget.value}`)
-    .then(response => response.json())
-    .then(wordObj => console.log(wordObj))
-  }
+  // clickSearch = (e) => {
+  //   fetch(`https://googledictionaryapi.eu-gb.mybluemix.net/?define=${e.currentTarget.value}`)
+  //   .then(response => response.json())
+  //   .then(wordObj => console.log(wordObj))
+  // }
 
+  // clickSearch={this.clickSearch}
 
   render(){
 
@@ -59,7 +60,6 @@ class App extends React.Component{
       word.word.includes(this.state.searchTerm) )
 
     return(
-
       <div className="App">
               <Navbar
                 title="WordUP!"
@@ -67,7 +67,7 @@ class App extends React.Component{
               <SearchBar
                 textState={this.state.searchTerm}
                 changeSearchTerm={this.changeSearchTerm}
-                clickSearch={this.clickSearch}
+
                 random={this.getRandom}
               />
 
