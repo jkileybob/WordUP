@@ -1,13 +1,21 @@
 import React from 'react'
 
-// props: word       ={word}
+// props: word          ={word}
+//        isHidden      ={props.isHidden}
+//        currentCard   ={props.currentCard}
 const WordCard = (props) => {
-  // console.log(props.word)
+  console.log(props)
   return(
     <div className= 'card-container'>
-      <div className="card">
+      <div className="card"
+           currentCard={props.currentCard}
+           isHidden={props.isHidden}
+        >
 
-        <div className="front">
+        <div className="front"
+          onClick={props.callback}
+
+          >
           <div className="word-info">
               <h1>{props.word.word}</h1>
               <h3>{props.word.phonetic}</h3>
@@ -17,6 +25,7 @@ const WordCard = (props) => {
 
         <div className="back">
           <div className={props.word.word}>
+
           </div>
         </div>
 

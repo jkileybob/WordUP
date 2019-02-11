@@ -35,6 +35,12 @@ class App extends React.Component{
   //   return card
   // }
 
+  handleCardDisplay = (wordObj) => {
+    this.setState({
+      currentCard: wordObj
+      })
+    }
+  
 
   changeSearchTerm = (e) => {
     console.log(e.currentTarget.value)
@@ -66,6 +72,7 @@ class App extends React.Component{
           <div className= 'container-div'>
             <WordCardContainer
               wordsList={filterWords}
+              currentCard={this.state.currentCard}
             />
         </div>
       </div>
