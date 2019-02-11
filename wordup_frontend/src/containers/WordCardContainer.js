@@ -1,5 +1,5 @@
 import React from 'react'
-import WordCard from '../components/WordCard.js'
+import WordCard from '../containers/WordCard.js'
 
 // props: wordsList           ={this.state.filterWords}
 class WordCardContainer extends React.Component{

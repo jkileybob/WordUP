@@ -12,11 +12,11 @@ class WordCard extends React.Component{
     this.setState({
       isHidden: false
     })
-  } else {
+    } else {
     this.setState({
       isHidden: true
     })
-  }
+    }
   }
 
   render(){
