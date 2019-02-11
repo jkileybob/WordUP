@@ -7,10 +7,11 @@ const SearchBar = (props) => {
       type="text"
       value={props.textState}
       onChange={props.changeSearchTerm}/><br></br>
-    <button
-      onClick={props.random}
-      >Roll the Dice</button>
-    </div>
+
+    <button onClick={props.clickSearch}>Search</button>
+    <button onClick={props.random}>Roll the Dice</button>
+
+  </div>
   )
 }
 
