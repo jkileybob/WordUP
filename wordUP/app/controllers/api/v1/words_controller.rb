@@ -17,7 +17,7 @@ class Api::V1::WordsController < ApplicationController
   private
 
   def word_params
-    params.permit(:word, :phonetic, :meaning, :user_id)
+    params.permit(:word, :phonetic, :meaning)
   end
 
 

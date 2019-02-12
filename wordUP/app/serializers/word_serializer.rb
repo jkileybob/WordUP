@@ -1,4 +1,5 @@
 class WordSerializer < ActiveModel::Serializer
-  belongs_to :user
-  attributes :id, :word, :phonetic, :meaning, :user_id
+  has_many :user_words
+  has_many :users, through: :user_words
+  attributes :id, :word, :phonetic, :meaning
 end
