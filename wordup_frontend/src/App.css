@@ -1,4 +1,26 @@
-.App {
+.SearchBar{
+  width: 100%;
+  text-align: center;
+}
+
+.navbar{
+  width: 100%;
+  text-align:center;
+}
+
+.word-card-container{
+  width: 100%;
+  text-align:center;
+}
+
+.card{
+
+}
+
+
+
+
+/* .App {
   text-align: center;
 }
 
@@ -29,4 +51,4 @@
   to {
     transform: rotate(360deg);
   }
-}
+} */

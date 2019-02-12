@@ -1,5 +1,5 @@
 import React from 'react';
-import Navbar from '../src/components/Navbar'
+import Navbar from '../src/components/NavBar/Navbar'
 import SearchBar from '../src/components/SearchBar'
 import WordCardContainer from '../src/containers/WordCardContainer'
 
@@ -57,7 +57,7 @@ class App extends React.Component{
 
       <div className="App">
               <Navbar
-                title="WordUP!"
+                link={"https://www.youtube.com/watch?v=MZjAantupsA"}
                />
               <SearchBar
                 textState={this.state.searchTerm}
