@@ -1,4 +1,5 @@
 import React from 'react';
+import {debounce} from 'lodash';
 import Navbar from '../src/components/NavBar/Navbar'
 import SearchBar from '../src/components/SearchBar'
 import WordCardContainer from '../src/containers/WordCardContainer'
@@ -30,6 +31,7 @@ class App extends React.Component{
     .then(response => response.json())
     .then(words => {
       let random = words[Math.floor(Math.random()*words.length)];
+      console.log(random.word)
       this.setState({
         searchTerm: random.word,
         currentCard: random
@@ -38,20 +40,45 @@ class App extends React.Component{
   }
 
   changeSearchTerm = (e) => {
-    // console.log(e.currentTarget.value)
-    let inputText = e.currentTarget.value
-    this.setState({
-      searchTerm: inputText,
-      currentCard: inputText
-    })
+    e.persist();
+    // debounce((e) => {
+      // console.log(e.currentTarget.value)
+      let inputText = e.currentTarget.value
+      this.setState({
+        searchTerm: inputText,
+        currentCard: inputText
+      })
+  // }, 2000)
+  }
+
+  // filterWords = () => {
+  //   return this.state.allWords.filter(word =>
+  //     word.word.includes(this.state.searchTerm))
+  // }
+
+  filterWords = () => {
+    let wordArray = [];
+
+    while (wordArray.length < 3) {
+      this.state.allWords.filter(word =>
+      word.word.includes(this.state.searchTerm).push(wordArray))
+      console.log(wordArray)
+    }
+
   }
 
 
+  // return  debounce(() => {
+  //     return
+  //     this.state.allWords.filter(word =>
+  //       word.word.includes(this.state.searchTerm))
+  //     }, 2000, {"leading": false})
+  // }
+
   render(){
 
-    let filterWords = this.state.allWords.filter(word =>
-      word.word.includes(this.state.searchTerm)
-    )
+    // let filterWords = this.state.allWords.filter(word =>
+    //   word.word.includes(this.state.searchTerm))
 
     return(
 
@@ -68,7 +95,7 @@ class App extends React.Component{
             {this.state.currentCard ?
           <div className= 'container-div'>
               <WordCardContainer
-                wordsList={filterWords}
+                wordsList={this.filterWords()}
                 currentcard={this.state.currentCard}
               />
           </div> : null}
