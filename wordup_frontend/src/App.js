@@ -72,6 +72,8 @@ class App extends React.Component{
                 currentcard={this.state.currentCard}
               />
           </div> : null}
+
+
       </div>
 
     )}

@@ -3,20 +3,20 @@
   text-align: center;
 }
 
+::placeholder {
+text-align: center;
+}
+
 .navbar{
   width: 100%;
   text-align:center;
+  height: 25vmin;
 }
 
 .word-card-container{
   width: 100%;
   text-align:center;
 }
-
-.card{
-
-}
-
 
 
 
