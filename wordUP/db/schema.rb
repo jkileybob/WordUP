@@ -10,10 +10,17 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 2019_02_07_183859) do
+ActiveRecord::Schema.define(version: 2019_02_12_164023) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "user_words", force: :cascade do |t|
+    t.integer "user_id"
+    t.string "word_id"
+    t.datetime "created_at", null: false
+    t.datetime "updated_at", null: false
+  end
 
   create_table "users", force: :cascade do |t|
     t.string "word_card"
@@ -25,7 +32,6 @@ ActiveRecord::Schema.define(version: 2019_02_07_183859) do
     t.string "word"
     t.string "phonetic"
     t.string "meaning"
-    t.integer "user_id"
     t.datetime "created_at", null: false
     t.datetime "updated_at", null: false
   end
